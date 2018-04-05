@@ -1,0 +1,60 @@
+// AST created from file C:\workspace\sdfparser0328\tests\portals\PTest1.str
+
+ProgramDecl
+|-PipelineDecl <line:5,col:21> PTest1 !statefull 'void->void (void)'
+| `-CompoundStmt
+|   |-VarDecl <line:6,col:24> pp '!const PortalType(IntPrinter)'
+|   | `-NoExpr
+|   |-StreamConstructExpr IntSource '(pp)'
+|   | `-NoExpr
+|   `-StreamConstructExpr IntPrinter '(void)'
+|     `-PortalSpecExpr to '(pp)'
+|-FilterDecl <line:11,col:18> IntSource !statefull 'void->int (PortalType(IntPrinter))'
+| |-ParmVarDecl pp 'PortalType(IntPrinter)'
+| `-FilterBodyDecl
+|   |-VarDecl <line:12,col:9> x '!const int'
+|   | `-NoExpr
+|   |-InitFunctionDecl
+|   | `-CompoundStmt
+|   |   `-BinaryOperator '='
+|   |     |-ID <line:14,col:9> x
+|   |     `-IntLiteral <line:14,col:13> 1
+|   `-WorkFunctionDecl
+|     |-PushDecl
+|     | `-IntLiteral <line:16,col:15> 1
+|     `-CompoundStmt
+|       |-PushStmt
+|       | `-ID <line:17,col:14> x
+|       |-IfStmt
+|       | |-BinaryOperator '=='
+|       | | |-ID <line:18,col:6> x
+|       | | `-IntLiteral <line:18,col:11> 10
+|       | |-MsgStmt <line:18,col:15> pp <line:18,col:18> setBase (IntLiteral(18.26,1000,1000))'
+|       | | |-UnaryOperator '-'
+|       | | | `-IntLiteral <line:18,col:34> 5
+|       | | `-UnaryOperator '-'
+|       | |   `-IntLiteral <line:18,col:37> 5
+|       | `-NoStmt
+|       `-BinaryOperator '='
+|         |-ID <line:19,col:9> x
+|         `-BinaryOperator '+'
+|           |-ID <line:19,col:13> x
+|           `-IntLiteral <line:19,col:17> 1
+`-FilterDecl <line:23,col:18> IntPrinter !statefull 'int->void (void)'
+  `-FilterBodyDecl
+    |-VarDecl <line:24,col:9> base '!const int'
+    | `-NoExpr
+    |-WorkFunctionDecl
+    | |-PopDecl
+    | | `-IntLiteral <line:25,col:14> 1
+    | `-CompoundStmt
+    |   `-CallExpr println(BinaryOperator(+,PopExpr(),base))'
+    |     `-BinaryOperator '+'
+    |       |-PopExpr
+    |       `-ID <line:26,col:23> base
+    `-HandlerFunctionDecl setBase '(int)'
+      |-ParmVarDecl b 'int'
+      `-CompoundStmt
+        `-BinaryOperator '='
+          |-ID <line:29,col:9> base
+          `-ID <line:29,col:16> b

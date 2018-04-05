@@ -1,0 +1,135 @@
+// AST created from file C:\workspace\sdfparser0328\tests\indirect\IndirectTest.str
+
+ProgramDecl
+|-PipelineDecl <line:2,col:21> IndirectTest !statefull 'void->void (void)'
+| `-CompoundStmt
+|   |-StreamConstructExpr FloatSource '(void)'
+|   | `-NoExpr
+|   |-StreamConstructExpr LinearFilter1 '(void)'
+|   | `-NoExpr
+|   |-StreamConstructExpr LinearFilter2 '(void)'
+|   | `-NoExpr
+|   `-StreamConstructExpr FloatSink '(void)'
+|     `-NoExpr
+|-FilterDecl <line:9,col:29> FloatSource statefull 'void->float (void)'
+| `-FilterBodyDecl
+|   |-VarDecl <line:10,col:9> x '!const float'
+|   | `-NoExpr
+|   |-InitFunctionDecl
+|   | `-CompoundStmt
+|   |   `-BinaryOperator '='
+|   |     |-ID <line:12,col:5> x
+|   |     `-IntLiteral <line:12,col:9> 0
+|   `-WorkFunctionDecl
+|     |-PushDecl
+|     | `-IntLiteral <line:14,col:13> 1
+|     `-CompoundStmt
+|       |-PushStmt
+|       | `-ID <line:15,col:10> x
+|       `-BinaryOperator '='
+|         |-ID <line:16,col:5> x
+|         `-BinaryOperator '+'
+|           |-ID <line:16,col:9> x
+|           `-IntLiteral <line:16,col:13> 1
+|-FilterDecl <line:20,col:20> FloatSink !statefull 'float->void (void)'
+| `-FilterBodyDecl
+|   `-WorkFunctionDecl
+|     |-PopDecl
+|     | `-IntLiteral <line:21,col:12> 1
+|     `-CompoundStmt
+|       `-CallExpr println(PopExpr())'
+|         `-PopExpr
+|-FilterDecl <line:29,col:21> LinearFilter1 !statefull 'float->float (void)'
+| `-FilterBodyDecl
+|   `-WorkFunctionDecl
+|     |-PopDecl
+|     | `-IntLiteral <line:30,col:12> 3
+|     |-PushDecl
+|     | `-IntLiteral <line:30,col:19> 3
+|     `-CompoundStmt
+|       |-VarDecl <line:31,col:11> t1 '!const float'
+|       | `-PopExpr
+|       |-VarDecl <line:32,col:11> t2 '!const float'
+|       | `-PopExpr
+|       |-VarDecl <line:33,col:11> t3 '!const float'
+|       | `-PopExpr
+|       |-PushStmt
+|       | `-BinaryOperator '+'
+|       |   |-BinaryOperator '+'
+|       |   | |-BinaryOperator '*'
+|       |   | | |-IntLiteral <line:34,col:10> 9
+|       |   | | `-ID <line:34,col:12> t1
+|       |   | `-BinaryOperator '*'
+|       |   |   |-IntLiteral <line:34,col:17> 6
+|       |   |   `-ID <line:34,col:19> t2
+|       |   `-BinaryOperator '*'
+|       |     |-IntLiteral <line:34,col:24> 3
+|       |     `-ID <line:34,col:26> t3
+|       |-PushStmt
+|       | `-BinaryOperator '+'
+|       |   |-BinaryOperator '+'
+|       |   | |-BinaryOperator '*'
+|       |   | | |-IntLiteral <line:35,col:10> 8
+|       |   | | `-ID <line:35,col:12> t1
+|       |   | `-BinaryOperator '*'
+|       |   |   |-IntLiteral <line:35,col:17> 5
+|       |   |   `-ID <line:35,col:19> t2
+|       |   `-BinaryOperator '*'
+|       |     |-IntLiteral <line:35,col:24> 2
+|       |     `-ID <line:35,col:26> t3
+|       `-PushStmt
+|         `-BinaryOperator '+'
+|           |-BinaryOperator '+'
+|           | |-BinaryOperator '*'
+|           | | |-IntLiteral <line:36,col:10> 7
+|           | | `-ID <line:36,col:12> t1
+|           | `-BinaryOperator '*'
+|           |   |-IntLiteral <line:36,col:17> 4
+|           |   `-ID <line:36,col:19> t2
+|           `-BinaryOperator '*'
+|             |-IntLiteral <line:36,col:24> 1
+|             `-ID <line:36,col:26> t3
+`-FilterDecl <line:41,col:21> LinearFilter2 !statefull 'float->float (void)'
+  `-FilterBodyDecl
+    `-WorkFunctionDecl
+      |-PopDecl
+      | `-IntLiteral <line:42,col:12> 2
+      |-PushDecl
+      | `-IntLiteral <line:42,col:19> 4
+      `-CompoundStmt
+        |-VarDecl <line:43,col:11> t1 '!const float'
+        | `-PopExpr
+        |-VarDecl <line:44,col:11> t2 '!const float'
+        | `-PopExpr
+        |-PushStmt
+        | `-BinaryOperator '+'
+        |   |-BinaryOperator '*'
+        |   | |-IntLiteral <line:45,col:10> 1
+        |   | `-ID <line:45,col:12> t1
+        |   `-BinaryOperator '*'
+        |     |-IntLiteral <line:45,col:17> 2
+        |     `-ID <line:45,col:19> t2
+        |-PushStmt
+        | `-BinaryOperator '+'
+        |   |-BinaryOperator '*'
+        |   | |-IntLiteral <line:46,col:10> 1
+        |   | `-ID <line:46,col:12> t1
+        |   `-BinaryOperator '*'
+        |     |-IntLiteral <line:46,col:17> 0
+        |     `-ID <line:46,col:19> t2
+        |-PushStmt
+        | `-BinaryOperator '+'
+        |   |-BinaryOperator '*'
+        |   | |-IntLiteral <line:47,col:10> 1
+        |   | `-ID <line:47,col:12> t1
+        |   `-BinaryOperator '*'
+        |     |-IntLiteral <line:47,col:17> 2
+        |     `-ID <line:47,col:19> t2
+        `-PushStmt
+          `-BinaryOperator '+'
+            |-BinaryOperator '*'
+            | |-IntLiteral <line:48,col:10> 2
+            | `-ID <line:48,col:12> t1
+            `-BinaryOperator '*'
+              |-IntLiteral <line:48,col:17> 1
+              `-ID <line:48,col:19> t2

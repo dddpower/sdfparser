@@ -1,0 +1,103 @@
+// AST created from file C:\workspace\sdfparser0328\tests\struct\Struct.str
+
+ProgramDecl
+|-StructDecl <line:1,col:8> str 
+| |-FieldDecl <line:2,col:8> a '!const int'
+| `-FieldDecl <line:3,col:10> b '!const float'
+|-PipelineDecl <line:6,col:21> Struct !statefull 'void->void (void)'
+| `-CompoundStmt
+|   |-StreamConstructExpr createStr '(void)'
+|   | `-NoExpr
+|   |-StreamConstructExpr something '(void)'
+|   | `-NoExpr
+|   `-StreamConstructExpr printStr '(void)'
+|     `-NoExpr
+|-FilterDecl <line:12,col:18> createStr !statefull 'void->str (void)'
+| `-FilterBodyDecl
+|   `-WorkFunctionDecl
+|     |-PushDecl
+|     | `-IntLiteral <line:13,col:13> 1
+|     `-CompoundStmt
+|       |-VarDecl <line:14,col:9> c '!const str'
+|       | `-NoExpr
+|       |-BinaryOperator '='
+|       | |-FieldExpr
+|       | | |-ID <line:15,col:5> c
+|       | | `-ID <line:15,col:7> a
+|       | `-IntLiteral <line:15,col:11> 1
+|       |-BinaryOperator '='
+|       | |-FieldExpr
+|       | | |-ID <line:16,col:5> c
+|       | | `-ID <line:16,col:7> b
+|       | `-FloatLiteral <line:16,col:10> 1.0
+|       `-PushStmt
+|         `-ID <line:17,col:10> c
+|-FilterDecl <line:21,col:17> something !statefull 'str->str (void)'
+| `-FilterBodyDecl
+|   `-WorkFunctionDecl
+|     |-PushDecl
+|     | `-IntLiteral <line:22,col:13> 1
+|     |-PopDecl
+|     | `-IntLiteral <line:22,col:19> 1
+|     |-PeekDecl
+|     | `-IntLiteral <line:22,col:26> 2
+|     `-CompoundStmt
+|       |-VarDecl <line:23,col:9> c '!const str'
+|       | `-NoExpr
+|       |-VarDecl <line:24,col:6> a '!const str'
+|       | `-PeekExpr
+|       |   `-IntLiteral <line:24,col:15> 1
+|       |-VarDecl <line:25,col:6> b '!const str'
+|       | `-PopExpr
+|       |-BinaryOperator '='
+|       | |-FieldExpr
+|       | | |-ID <line:27,col:2> c
+|       | | `-ID <line:27,col:4> a
+|       | `-BinaryOperator '+'
+|       |   |-FieldExpr
+|       |   | |-ID <line:27,col:8> a
+|       |   | `-ID <line:27,col:10> a
+|       |   `-FieldExpr
+|       |     |-ID <line:27,col:14> b
+|       |     `-ID <line:27,col:16> a
+|       |-BinaryOperator '='
+|       | |-FieldExpr
+|       | | |-ID <line:28,col:2> c
+|       | | `-ID <line:28,col:4> b
+|       | `-BinaryOperator '+'
+|       |   |-FieldExpr
+|       |   | |-ID <line:28,col:8> a
+|       |   | `-ID <line:28,col:10> b
+|       |   `-FieldExpr
+|       |     |-ID <line:28,col:14> b
+|       |     `-ID <line:28,col:16> b
+|       `-PushStmt
+|         `-ID <line:29,col:8> c
+`-FilterDecl <line:33,col:18> printStr !statefull 'str->void (void)'
+  `-FilterBodyDecl
+    |-VarDecl <line:34,col:7> i '!const int'
+    | `-NoExpr
+    |-VarDecl <line:35,col:7> j '!const int'
+    | `-NoExpr
+    |-InitFunctionDecl
+    | `-CompoundStmt
+    |   |-BinaryOperator '='
+    |   | |-ID <line:37,col:5> i
+    |   | `-IntLiteral <line:37,col:7> 2
+    |   `-BinaryOperator '='
+    |     |-ID <line:38,col:5> j
+    |     `-IntLiteral <line:38,col:7> 3
+    `-WorkFunctionDecl
+      |-PopDecl
+      | `-IntLiteral <line:40,col:12> 1
+      `-CompoundStmt
+        |-VarDecl <line:41,col:9> c '!const str'
+        | `-PopExpr
+        |-CallExpr println(FieldExpr(c,a))'
+        | `-FieldExpr
+        |   |-ID <line:42,col:13> c
+        |   `-ID <line:42,col:15> a
+        `-CallExpr println(FieldExpr(c,b))'
+          `-FieldExpr
+            |-ID <line:43,col:13> c
+            `-ID <line:43,col:15> b

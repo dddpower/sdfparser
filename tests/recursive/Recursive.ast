@@ -1,0 +1,62 @@
+// AST created from file C:\workspace\sdfparser0328\tests\recursive\Recursive.str
+
+ProgramDecl
+|-PipelineDecl <line:1,col:21> Recursive !statefull 'void->void (void)'
+| `-CompoundStmt
+|   |-StreamConstructExpr Source '(void)'
+|   | `-NoExpr
+|   |-StreamConstructExpr Exp '(IntLiteral(3.13,3,3))'
+|   | `-NoExpr
+|   `-StreamConstructExpr Printer '(void)'
+|     `-NoExpr
+|-PipelineDecl <line:7,col:19> Exp !statefull 'int->int (int)'
+| |-ParmVarDecl N 'int'
+| `-CompoundStmt
+|   |-StreamConstructExpr TimesTwo '(void)'
+|   | `-NoExpr
+|   `-IfStmt
+|     |-BinaryOperator '>'
+|     | |-ID <line:9,col:9> N
+|     | `-IntLiteral <line:9,col:11> 1
+|     |-CompoundStmt
+|     | `-StreamConstructExpr Exp2 '(N)'
+|     |   `-NoExpr
+|     `-NoStmt
+|-PipelineDecl <line:14,col:19> Exp2 !statefull 'int->int (int)'
+| |-ParmVarDecl N 'int'
+| `-CompoundStmt
+|   `-StreamConstructExpr Exp3 '(BinaryOperator(+,N,IntLiteral(15.16,1,1)))'
+|     `-NoExpr
+|-PipelineDecl <line:18,col:19> Exp3 !statefull 'int->int (int)'
+| |-ParmVarDecl N 'int'
+| `-CompoundStmt
+|   `-StreamConstructExpr Exp '(BinaryOperator(-,N,IntLiteral(19.15,2,2)))'
+|     `-NoExpr
+|-FilterDecl <line:22,col:18> Source !statefull 'void->int (void)'
+| `-FilterBodyDecl
+|   `-WorkFunctionDecl
+|     |-PushDecl
+|     | `-IntLiteral <line:23,col:15> 1
+|     `-CompoundStmt
+|       `-PushStmt
+|         `-IntLiteral <line:24,col:7> 1
+|-FilterDecl <line:28,col:17> TimesTwo !statefull 'int->int (void)'
+| `-FilterBodyDecl
+|   `-WorkFunctionDecl
+|     |-PushDecl
+|     | `-IntLiteral <line:29,col:15> 1
+|     |-PopDecl
+|     | `-IntLiteral <line:29,col:21> 1
+|     `-CompoundStmt
+|       `-PushStmt
+|         `-BinaryOperator '*'
+|           |-IntLiteral <line:30,col:7> 2
+|           `-PopExpr
+`-FilterDecl <line:34,col:18> Printer !statefull 'int->void (void)'
+  `-FilterBodyDecl
+    `-WorkFunctionDecl
+      |-PopDecl
+      | `-IntLiteral <line:35,col:14> 1
+      `-CompoundStmt
+        `-CallExpr println(PopExpr())'
+          `-PopExpr

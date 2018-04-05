@@ -1,0 +1,80 @@
+<benchmark>
+  <name>messaging</name>
+  <desc>Tests of dynamic messaging</desc>
+  <description>
+Tests of dynamic messaging.
+Someone want to write a detailed description?
+  </description>
+  <implementations>
+    <impl lang="StreamIt" id="test1">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test1.str</file>
+      <file class="output">Test1.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test2">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test2.str</file>
+      <file class="output">Test2.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test3">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test3.str</file>
+      <file class="output">Test3.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test4">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test4.str</file>
+      <file class="output">Test4.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test5">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test5.str</file>
+      <file class="output">Test5.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test6">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test6.str</file>
+      <file class="output">Test6.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test7">
+      <desc>Tests multiple portals to same filter.</desc>
+      <file class="source">Test7.str</file>
+      <file class="output">Test7.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test8">
+      <desc>Tests multiple portals to same filter.</desc>
+      <file class="source">Test8.str</file>
+      <file class="output">Test8.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test9">
+      <desc>Tests multiple receivers in a pipeline.</desc>
+      <file class="source">Test9.str</file>
+      <file class="output">Test9.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test10">
+      <desc>Tests filter pairs connected by multiple portals.</desc>
+      <file class="source">Test10.str</file>
+      <file class="output">Test10.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test11">
+      <desc>Tests sending arrays as message parameters.</desc>
+      <file class="source">Test11.str</file>
+      <file class="output">Test11.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test12">
+      <desc>Tests delivery of messages at iteration 0.</desc>
+      <file class="source">Test12.str</file>
+      <file class="output">Test12.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test_upstream">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test_Upstream.str</file>
+      <file class="output">Test_Upstream.out</file>
+    </impl>
+    <impl lang="StreamIt" id="test_dynamic">
+      <desc>Someone want to write a description of this test?</desc>
+      <file class="source">Test_dynamic.str</file>
+      <file class="output">Test_dynamic.out</file>
+    </impl>
+  </implementations>
+</benchmark>

@@ -1,0 +1,20 @@
+// AST created from file C:\workspace\sdfparser0328\tests\builtins-test\FileBitcopy.str
+
+ProgramDecl
+`-PipelineDecl <line:11,col:21> FileBitcopy !statefull 'void->void (void)'
+  `-CompoundStmt
+    |-StreamConstructExpr FileReader '(StringLiteral(12.25,bit.in))'
+    | `-NoExpr
+    |-NoConstructFilterExpr !statefull 'bit->bit'
+    | |-FilterBodyDecl
+    | | `-WorkFunctionDecl
+    | |   |-PopDecl
+    | |   | `-IntLiteral <line:14,col:11> 1
+    | |   |-PushDecl
+    | |   | `-IntLiteral <line:14,col:18> 1
+    | |   `-CompoundStmt
+    | |     `-PushStmt
+    | |       `-PopExpr
+    | `-NoExpr
+    `-StreamConstructExpr FileWriter '(StringLiteral(18.25,bit.out))'
+      `-NoExpr

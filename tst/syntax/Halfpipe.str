@@ -1,0 +1,133 @@
+struct SAEandPBlock4x4 {
+  int SAE;
+  int[16] residual;
+}
+
+native RaytracerUtil
+{
+  int currentTimeMillis();
+}
+
+static {
+  int[4] blocks_per_macroblock = {0, 6, 8, 12}; 
+  int const_macroblock_address_inc_len = 33;
+  if(a > 10) {
+  } else {
+  }
+  
+  for(int i = 0; i <= 10; i++){
+    int ff;
+  }
+  
+  init {
+    abads = 20;
+    blocks_per_macroblock[55][100][MIN] = 0; // ERROR - you must have set it incorrectly
+ }
+}
+
+void->void pipeline Halfpipe {
+  body pipeline {
+     add RFtoIF(AAAAA);
+     add FFT_Kernel(BBBBB);
+     add Magnitude();
+  } to where;
+  
+  body pipeline {
+  }
+  
+  add abc to b, X;
+  add DEFG to bdf;
+  
+  add splitjoin {
+    split roundrobin(0);
+    for (int i=0; i<numChannels; i++) {
+        add pipeline {
+          add InputGenerate(i, numSamples, targetBeam, targetSample, cfarThreshold);
+        }
+    }
+    join roundrobin(2);
+  }
+  
+  add float->float filter 
+  {
+    work push 1 pop 1 
+    {
+      float x = pop();
+      push(x);
+      println(x);
+    }
+  }
+  
+  add OneSource;
+  add theSJ;
+  add IntPrinter;
+  
+}
+
+
+
+int->int splitjoin theSJ {
+  split roundrobin;
+  add D;
+  add D;
+  join roundrobin;
+}
+
+void->int filter OneSource {
+  SAEandPBlock4x4 m;
+  int n;
+  float[22] P = {22.0, 11.0, 10};
+  float[22] empty = {};
+  
+  int[2][3] S1 = 
+   {{14,  4, 13},
+    { 0, 15,  7}};
+                     
+  init { n = 0; }
+  work push 1 {
+    m.SAE = 888;
+    S1[3][2] = 999;
+    push(n++); 
+  }
+}
+
+int->int filter D(int tempA, float tempB){
+      work pop 1 push 1 {
+        push(pop()+1);
+      }
+}
+
+int->void filter IntPrinter {
+    work pop 2 {
+      int x1 = pop();
+      int x2 = pop();
+      println(x1);
+      println(x2);
+    }
+}
+
+void->int pipeline Counter {
+  portal<Sink> p;
+  add Source(p);
+  add Sink to p;
+}
+
+void->int filter Source(portal<Sink> p) {
+  int i = 1;
+  work {
+  push(0);
+  p.count(i++);
+  }
+}
+
+int->void filter Sink {
+  int output = 0;
+  work {
+    pop();
+    print(output);
+  }
+  handler count(int val) {
+  output = val;
+  }
+}
+

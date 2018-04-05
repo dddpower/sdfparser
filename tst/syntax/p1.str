@@ -1,0 +1,71 @@
+  add test1();
+  add test2();
+  add splitjoin {
+  }
+  add pipeline {
+  }
+  add float->float filter {
+    float a;
+  }
+   
+/*
+Add Test
+  add test1();
+  add test2();
+  add splitjoin {
+  }
+  add pipeline {
+  }
+  add float->float filter {
+    float a;
+  }
+   
+*/
+/*
+Filter Test 
+
+  float->float filter TestFunc(int n) {
+    float w;
+  
+    init {
+    }
+    prework push peek pop {
+    }
+    work push pop peek {
+    }
+  }
+*/
+/* 
+Pipeline Test
+
+float->float pipeline FFTReorderSimple(int n) {
+  add test1();
+  add test2();
+  add splitjoin {
+  }
+  add pipeline {
+  }
+  add float->float filter {
+    float a;
+  }
+}
+*/
+
+
+
+//int -> void pipeline P1 {/*// (int[4] i) { */
+/*
+	add actor1();
+  add actor2();
+*/
+//}
+
+
+/*
+
+int -> void pipeline P1 (int a, float x, float[add?add?add:add:add] foo, float[][] foo1) {
+}
+
+*/
+
+

@@ -1,0 +1,68 @@
+// AST created from file C:\workspace\sdfparser0328\tests\fusion-scaling\Scaling.str
+
+ProgramDecl
+|-PipelineDecl <line:1,col:21> Scaling !statefull 'void->void (void)'
+| `-CompoundStmt
+|   |-VarDecl <line:2,col:9> E '!const int'
+|   | `-IntLiteral <line:2,col:13> 64
+|   |-VarDecl <line:3,col:9> e '!const int'
+|   | `-ID <line:3,col:13> E
+|   |-VarDecl <line:4,col:9> o '!const int'
+|   | `-IntLiteral <line:4,col:13> 1
+|   |-VarDecl <line:5,col:9> u '!const int'
+|   | `-IntLiteral <line:5,col:13> 1
+|   |-StreamConstructExpr Source '(u)'
+|   | `-NoExpr
+|   `-StreamConstructExpr Sink '(o e)'
+|     `-NoExpr
+|-FilterDecl <line:11,col:27> Source statefull 'void->int (int)'
+| |-ParmVarDecl u 'int'
+| `-FilterBodyDecl
+|   |-VarDecl <line:12,col:9> i '!const int'
+|   | `-IntLiteral <line:12,col:11> 0
+|   `-WorkFunctionDecl
+|     |-PushDecl
+|     | `-ID <line:13,col:15> u
+|     `-CompoundStmt
+|       `-PushStmt
+|         `-UnaryOperator '++'
+|           `-ID <line:14,col:7> i
+`-FilterDecl <line:18,col:18> Sink !statefull 'int->void (int int)'
+  |-ParmVarDecl o 'int'
+  |-ParmVarDecl e 'int'
+  `-FilterBodyDecl
+    `-WorkFunctionDecl
+      |-PopDecl
+      | `-ID <line:19,col:14> o
+      |-PeekDecl
+      | `-ID <line:19,col:21> e
+      `-CompoundStmt
+        |-VarDecl <line:20,col:6> result '!const int'
+        | `-IntLiteral <line:20,col:15> 0
+        |-ForStmt
+        | |-VarDecl <line:21,col:11> i '!const int'
+        | | `-IntLiteral <line:21,col:13> 0
+        | |-BinaryOperator '<'
+        | | |-ID <line:21,col:16> i
+        | | `-ID <line:21,col:18> e
+        | |-UnaryOperator '++'
+        | | `-ID <line:21,col:21> i
+        | `-CompoundStmt
+        |   `-BinaryOperator '+='
+        |     |-ID <line:22,col:6> result
+        |     `-BinaryOperator '*'
+        |       |-ID <line:22,col:16> i
+        |       `-PeekExpr
+        |         `-ID <line:22,col:23> i
+        |-ForStmt
+        | |-VarDecl <line:24,col:11> i '!const int'
+        | | `-IntLiteral <line:24,col:13> 0
+        | |-BinaryOperator '<'
+        | | |-ID <line:24,col:16> i
+        | | `-ID <line:24,col:18> o
+        | |-UnaryOperator '++'
+        | | `-ID <line:24,col:21> i
+        | `-CompoundStmt
+        |   `-PopExpr
+        `-CallExpr println(result)'
+          `-ID <line:27,col:10> result

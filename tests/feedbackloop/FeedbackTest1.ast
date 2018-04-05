@@ -1,0 +1,44 @@
+// AST created from file C:\workspace\sdfparser0328\tests\feedbackloop\FeedbackTest1.str
+
+ProgramDecl
+`-PipelineDecl <line:6,col:21> FeedbackTest1 !statefull 'void->void (void)'
+  `-CompoundStmt
+    |-VarDecl <line:7,col:9> N '!const int'
+    | `-IntLiteral <line:7,col:13> 3
+    |-StreamConstructExpr FloatSeqSource '(FloatLiteral(8.24,1.0,1.0) FloatLiteral(8.28,1.0,1.0))'
+    | `-NoExpr
+    |-NoConstructFeedbackLoopExpr!statefull 'float->float'
+    | |-CompoundStmt
+    | | |-JoinStmt '(BinaryOperator(*,IntLiteral(11.18,2,2),N) N)'
+    | | |-NoConstructFilterExpr !statefull 'float->float'
+    | | | |-FilterBodyDecl
+    | | | | `-WorkFunctionDecl
+    | | | |   |-PushDecl
+    | | | |   | `-IntLiteral <line:13,col:16> 1
+    | | | |   |-PopDecl
+    | | | |   | `-IntLiteral <line:13,col:22> 1
+    | | | |   `-CompoundStmt
+    | | | |     `-PushStmt
+    | | | |       `-UnaryOperator '-'
+    | | | |         `-PopExpr
+    | | | `-NoExpr
+    | | |-StreamConstructExpr Identity '(void)'
+    | | | `-NoExpr
+    | | |-SplitStmt '(IntLiteral(18.19,2,2) IntLiteral(18.21,1,1))'
+    | | `-ForStmt
+    | |   |-VarDecl <line:20,col:11> i '!const int'
+    | |   | `-IntLiteral <line:20,col:13> 0
+    | |   |-BinaryOperator '<'
+    | |   | |-ID <line:20,col:16> i
+    | |   | `-BinaryOperator '*'
+    | |   |   |-IntLiteral <line:20,col:18> 6
+    | |   |   `-ID <line:20,col:20> N
+    | |   |-UnaryOperator '++'
+    | |   | `-ID <line:20,col:23> i
+    | |   `-CompoundStmt
+    | |     `-EnqueueStmt
+    | |       `-ParenExpr
+    | |         `-FloatLiteral <line:21,col:14> 0.0
+    | `-NoExpr
+    `-StreamConstructExpr FloatPrinter '(void)'
+      `-NoExpr

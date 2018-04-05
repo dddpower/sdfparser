@@ -1,0 +1,27 @@
+void->void pipeline MergeSortSimple {
+  int SIZE = 4;
+  int START = SIZE;
+  add IntSource(SIZE);
+  add Sorter(START);
+  add IntPrinter();
+}
+void->int filter IntSource(int SIZE) {
+  int [SIZE]data;
+}
+int->int filter Merger (int N) {
+}
+int->int pipeline Sorter (int N) {
+  if (N>2) {
+    add splitjoin {
+      split roundrobin();
+      add Sorter(N/2);
+      add Sorter(N/2);
+      join roundrobin();
+    };
+    add Merger(N);
+  } else {
+    add Merger(2);
+  }
+}
+int->void filter IntPrinter() {
+}

@@ -1,0 +1,23 @@
+<benchmark>
+  <name>feedbackloop</name>
+  <desc>Tests of feedbackloops</desc>
+  <description>
+    This set of tests checks the ability of compiling feedbackloop's correctly.
+  </description>
+  <implementations>
+    <impl lang="StreamIt" id="feedbacktest1">
+     <desc>Example extracted from FHRFeedback</desc>
+     <file class="source">FeedbackTest1.str ../../libraries/FloatSeqSource.str ../../libraries/FloatPrinter.str</file>
+     <file class="output">FeedbackTest1.out</file>
+    </impl>
+    <impl lang="StreamIt" id="feedbacktest2">
+     <desc>Simple feedbackloop printing sequence of ints</desc>
+     <file class="source">FeedbackTest2.str</file>
+     <file class="output">FeedbackTest2.out</file>
+    </impl>
+    <impl lang="StreamIt" id="feedbacktest3">
+     <desc>Should fail in compile! Would be nice if we eventually had reasonable message</desc>
+     <file class="source">FeedbackTest3.str ../../libraries/IntSeqSource.str ../../libraries/IntPrinter.str</file>
+    </impl>
+  </implementations>
+</benchmark>
